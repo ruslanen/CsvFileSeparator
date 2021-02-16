@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvFileSeparator", "CsvFileSeparator\CsvFileSeparator.csproj", "{990BBCD8-1BDC-4A83-AFAC-D1509A1B444C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvFileSeparatorUI", "CsvFileSeparatorUI\CsvFileSeparatorUI.csproj", "{0EFA4670-6873-409C-A1E6-D24FB08F2937}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{990BBCD8-1BDC-4A83-AFAC-D1509A1B444C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{990BBCD8-1BDC-4A83-AFAC-D1509A1B444C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{990BBCD8-1BDC-4A83-AFAC-D1509A1B444C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{990BBCD8-1BDC-4A83-AFAC-D1509A1B444C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EFA4670-6873-409C-A1E6-D24FB08F2937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EFA4670-6873-409C-A1E6-D24FB08F2937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EFA4670-6873-409C-A1E6-D24FB08F2937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EFA4670-6873-409C-A1E6-D24FB08F2937}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
