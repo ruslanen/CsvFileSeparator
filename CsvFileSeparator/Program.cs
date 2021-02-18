@@ -1,29 +1,32 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using System.Text;
 
 namespace CsvFileSeparator
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var path = "test.csv";
-            var filesCount = 3;
-            var hasHeaders = true;
-            var needHeadersInOutput = false; 
-            
-            var csvFileSeparator = new CsvFileSeparator(path, filesCount, hasHeaders, needHeadersInOutput);
-            csvFileSeparator.Process();
-        }
-    }
-
     public class CsvFileSeparator
     {
+        /// <summary>
+        /// Путь до файла
+        /// </summary>
         private readonly string _filePath;
+        
+        /// <summary>
+        /// Количество файлов, на которое будет разделен исходный файл
+        /// </summary>
         private readonly int _filesCount;
+
+        /// <summary>
+        /// Признак наличия строки заголовков в исходном файле
+        /// </summary>
         private readonly bool _hasHeaders;
+
+        /// <summary>
+        /// Признак необходимости добавления строки заголовков в разделенные файлы
+        /// </summary>
         private readonly bool _needHeadersInOutput;
+
         public CsvFileSeparator(string filePath, int filesCount, bool hasHeaders, bool needHeadersInOutput)
         {
             _filePath = filePath;
@@ -32,7 +35,7 @@ namespace CsvFileSeparator
             _needHeadersInOutput = needHeadersInOutput;
         }
         
-        public void Process()
+        public void Process(BackgroundWorker backgroundWorker = null)
         {
             var fileName = Path.GetFileNameWithoutExtension(_filePath);
             using (var streamReader = new StreamReader(_filePath, new UTF8Encoding(false)))
@@ -69,6 +72,8 @@ namespace CsvFileSeparator
 
                     BuildFile(streamReader, i, startAtLine, filePartLines, headersLine, fileName);
                     startAtLine *= i;
+
+                    backgroundWorker?.ReportProgress(i);
                 }
             }
         }
